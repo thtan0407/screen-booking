@@ -886,6 +886,29 @@ input:focus, select:focus, textarea:focus {
     padding: 15px;
 }
 
+.bookingReport {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #cecece !important;
+    margin: 0;
+    padding: 10px !important;
+    margin-top: 10px;
+}
+
+.bookingReport:first-child {
+    margin-top: 0;
+}
+
+.bookingReport .bookingAppointmentTitle {
+    color: var(--main-2);
+    margin-bottom: 0;
+}
+
+.bookingReport .bookingAppointmentPrice {
+    text-align: center;
+    font-size: .9rem;
+}
+
 @media screen and (min-width: 991px) {
     .pageIndex, .pageBooking, .userPage {
         border: 1px solid #d1d1d1;
@@ -905,7 +928,7 @@ input:focus, select:focus, textarea:focus {
     }
 
     .bookingAppointmentTitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .bookingAppointmentStar {
