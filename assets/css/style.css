@@ -127,21 +127,44 @@ input:focus, select:focus, textarea:focus {
     color: #fff;
 }
 
+.btnTheme03 {
+    background: #9b91a0 !important;
+    color: #fff;
+    font-size: .95rem;
+    outline: none !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    transition: .2s all ease-in;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.btnTheme03:hover,
+.btnTheme03:focus {
+    background: #6e6772 !important;
+    color: #fff;
+}
+
 .pageIndex,
-.pageBooking{
+.pageBooking {
     background: #f0f0f0;
 }
 
+.pageIndex, .pageBooking, .userPage,
+.secFooter {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
 .secHeader {
-    background: #fff;
+    /*background: #fff;*/
     padding: .5rem 0;
-    border-bottom: 1px solid #d1d1d1;
+    /*border-bottom: 1px solid #d1d1d1;*/
 }
 
 .secBackground {
     background: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 10px;
+    border: 1px solid #cecece;
 }
 
 .headerRight .headerHeading {
@@ -274,20 +297,21 @@ input:focus, select:focus, textarea:focus {
     color: #777
 }
 
-.userPage .formInner {
+.formInner {
     padding: 30px 15px;
 }
 
-.userPage .formInner .form-group {
+.formInner .form-group {
     position: relative;
 }
 
-.userPage .formInner .form-group span {
+
+.formInner .form-group span {
     font-size: 1.1rem;
     color: #777;
 }
 
-.userPage .formInner .form-group input.form-control {
+.formInner .form-group input.form-control {
     border-radius: 40px;
     outline: none !important;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
@@ -297,9 +321,30 @@ input:focus, select:focus, textarea:focus {
     padding-left: 15px;
 }
 
-.userPage .formInner .form-group input.form-control::placeholder {
+.userOTP .formInner .form-group input.form-control {
+    width: 44px;
+    border-radius: 100%;
+    margin: 0 4px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.formInner .form-group input.form-control::placeholder {
     font-size: .95rem;
     color: #777;
+}
+
+
+.modalTheme .formInner {
+    padding: 0;
+}
+
+.modalTheme .formInner .form-group input.form-control {
+    height: 34px;
+    line-height: 34px;
 }
 
 .userPage .userFooter {
@@ -318,7 +363,7 @@ input:focus, select:focus, textarea:focus {
     justify-content: center;
 }
 
-.userOTP.userPage .formInner .form-group input.form-control {
+.userOTP.formInner .form-group input.form-control {
     width: 45px;
     height: 45px;
     margin: 0 5px;
@@ -329,6 +374,17 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.slideBookingItem {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.slideBookingBackground {
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    margin: 0 5px;
 }
 
 .bookingAppointmentItem {
@@ -361,24 +417,31 @@ input:focus, select:focus, textarea:focus {
     color: #f93613;
 }
 
+.bookingAppointmentAvatar {
+    max-width: 80%;
+    margin: 0 auto;
+}
 
 .bookingAppointmentChoose {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 18px;
     height: 18px;
+    margin: auto;
 }
 
 .bookingAppointmentChoose::before {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(50% + 1px);
     transform: translate(-50%, -50%);
     display: block;
     width: 0.9rem;
     height: 0.9rem;
     pointer-events: none;
-    border-radius: .2rem;
+    border-radius: 100%;
     content: "";
     background-color: #fff;
     transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -388,7 +451,7 @@ input:focus, select:focus, textarea:focus {
 .bookingAppointmentChoose::after {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(50% + 1px);
     transform: translate(-50%, -50%);
     display: block;
     width: 1rem;
@@ -408,6 +471,16 @@ input:focus, select:focus, textarea:focus {
     background-image: url('../image/checked.svg');
 }
 
+.bookingAppointmentAction {
+    text-align: right;
+}
+
+.bookingAppointmentAction a {
+    width: unset;
+    font-size: 0.7rem;
+    padding: .15rem 1.2rem;
+}
+
 .bookingTimeInner {
     padding: 10px;
 }
@@ -419,17 +492,24 @@ input:focus, select:focus, textarea:focus {
     font-size: .95rem;
 }
 
-.bookingChooseDay {
+.bookingChooseDay,
+.appointmentChooseDay {
     margin-top: .7rem;
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
 }
 
-.bookingChooseDay .bookingChooseDayItem {
-    width: calc(100% / 7);
+.appointmentChooseDay {
+    margin-top: 0;
 }
 
-.bookingChooseDay .bookingChooseDayItem a {
+.bookingChooseDay .bookingChooseDayItem,
+.appointmentChooseDay .appointmentChooseDayItem {
+    min-width: calc(100% / 7);
+}
+
+.bookingChooseDay .bookingChooseDayItem a,
+.appointmentChooseDay .appointmentChooseDayItem a {
     flex: 1;
     display: flex;
     align-items: center;
@@ -444,18 +524,23 @@ input:focus, select:focus, textarea:focus {
 
 .bookingChooseDay .bookingChooseDayItem a.active,
 .bookingChooseDay .bookingChooseDayItem a:hover,
-.bookingChooseDay .bookingChooseDayItem a:focus {
+.bookingChooseDay .bookingChooseDayItem a:focus,
+.appointmentChooseDay .appointmentChooseDayItem a.active,
+.appointmentChooseDay .appointmentChooseDayItem a:hover,
+.appointmentChooseDay .appointmentChooseDayItem a:focus {
     background: #EFEFEF;
 }
 
-.bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayNumber {
+.bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayNumber,
+.appointmentChooseDay .appointmentChooseDayItem a span.appointmentChooseDayNumber {
     font-weight: 600;
     color: var(--main-1);
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
-.bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayText {
-    font-size: .7rem;
+.bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayText,
+.appointmentChooseDay .appointmentChooseDayItem a span.appointmentChooseDayText {
+    font-size: .8rem;
     color: #777;
 }
 
@@ -473,6 +558,7 @@ input:focus, select:focus, textarea:focus {
     position: relative;
     padding-bottom: 2rem;
 }
+
 .bookingChooseTimeItem:last-of-type {
     padding-bottom: .2rem;
 }
@@ -541,4 +627,327 @@ input:focus, select:focus, textarea:focus {
 .bookingChooseTimeItem > ul > li.active a {
     background: var(--main-3);
     border-color: var(--main-3);
+}
+
+.modalTheme .modal-content {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .7);
+    background-clip: unset;
+}
+
+.modalTheme .modal-content .modal-header {
+    position: relative;
+    justify-content: center;
+    background: var(--main-1);
+    color: #fff;
+    border-radius: 0;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.modalTheme .modal-content .modal-header .modal-title {
+    letter-spacing: .5px;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.modalTheme .modal-content .modal-header .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 50px;
+    background: var(--main-3);
+    color: #fff;
+    text-shadow: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .7;
+    outline: none;
+    box-shadow: none;
+    transition: .2s all ease-in;
+}
+
+.modalTheme .modal-content .modal-footer {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.modalTheme .modal-content .modal-footer .btnTheme02,
+.modalTheme .modal-content .modal-footer .btnTheme03 {
+    width: unset;
+    font-size: 0.8rem;
+    padding: .2rem 1.5rem;
+}
+
+.secBackgroundMain {
+    margin-top: 2rem;
+    background: var(--main-1);
+    border: 1px solid var(--main-3)
+}
+
+.appointmentBody {
+    padding: 20px 10px;
+}
+
+.appointmentInner .appointmentChooseDay {
+    padding: 10px;
+}
+
+.appointmentBody .appointmentDesc {
+    font-size: .9rem;
+    color: #ededed;
+    margin-bottom: .8rem;
+}
+
+.appointmentBody .appointmentTitle {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.appointmentBody .appointmentTitle span {
+    display: inline-block;
+    font-size: .95rem;
+    color: #ededed;
+}
+
+.appointmentBody .appointmentMeta ul li {
+    margin-bottom: .8rem;
+    font-size: .9rem;
+    color: #ededed;
+}
+
+.appointmentBody .appointmentMeta ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+.appointmentBody .appointmentMeta ul li i {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.appointmentAction {
+    text-align: center;
+}
+
+.appointmentAction a {
+    width: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.appointmentAction a:hover,
+.appointmentAction a:focus {
+    background: #ededed;
+    color: var(--main-1)
+}
+
+.scroll-x {
+    display: inline;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.scroll-x::-webkit-scrollbar {
+    height: 3px;
+}
+
+.scroll-x::-webkit-scrollbar-track {
+    background: var(--main-3);
+}
+
+.scroll-x::-webkit-scrollbar-thumb {
+    background: var(--main-1);
+}
+
+.scroll-x::-webkit-scrollbar-thumb:hover {
+    background: var(--main-2);
+}
+
+.profile-form {
+    margin: 2rem auto;
+    max-width: 480px;
+}
+
+.profile-form .form-group {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    font-size: 14px !important;
+    padding: 7px 15px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+.profile-form .form-group label {
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    font-weight: 500;
+    color: #a9a9a9;
+    transition: .3s all;
+    font-size: .85rem;
+}
+
+.profile-form .form-group input {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    border: none;
+    color: #121212;
+    font-size: .95rem;
+    padding: 7px 15px;
+    padding-left: 90px;
+    right: 0;
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #d9d9d9 !important;
+    border-radius: 20px !important;
+    height: 45px;
+    background: #f8f8f8 !important;
+}
+
+.profile-form .form-group input:focus ~ label {
+    opacity: 0;
+}
+
+.profile-form .form-group input::placeholder {
+    color: #121212
+}
+
+.profile-action {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    cursor: pointer;
+}
+
+.profile-action img {
+    border-radius: 100%;
+    width: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.profile-action .profile-change-image {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    right: -10%;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-action input#profile-avatar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.secUserInfo {
+    padding: 15px;
+}
+
+@media screen and (min-width: 991px) {
+    .pageIndex, .pageBooking, .userPage {
+        border: 1px solid #d1d1d1;
+    }
+
+    .secFooter {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .headerRight .headerHeading {
+        font-size: 1.3rem;
+    }
+
+    .headerRight .headerDesc {
+        font-size: 1.1rem;
+    }
+
+    .bookingAppointmentTitle {
+        font-size: 1.1rem;
+    }
+
+    .bookingAppointmentStar {
+        font-size: 95% !important;
+    }
+
+    .bookingAppointmentPrice {
+        font-size: .95rem !important;
+    }
+
+    .bookingAppointmentAvatar {
+        max-width: 60%;
+    }
+
+    .bookingAppointmentChoose {
+        width: 21px;
+        height: 21px;
+    }
+
+    .bookingAppointmentChoose::before,
+    .bookingAppointmentChoose::after {
+        width: 1.1rem;
+        height: 1.1rem;
+    }
+
+    .bookingTimeHeader p,
+    .bookingChooseTimeItem > span {
+        font-size: 1.1rem;
+    }
+
+    .bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayNumber,
+    .appointmentChooseDay .appointmentChooseDayItem a span.appointmentChooseDayNumber {
+        font-size: 1.1rem;
+    }
+
+    .bookingChooseDay .bookingChooseDayItem a span.bookingChooseDayText,
+    .appointmentChooseDay .appointmentChooseDayItem a span.appointmentChooseDayText {
+        font-size: 1rem;
+    }
+
+    .bookingChooseTimeItem > ul > li > a {
+        font-size: 1rem;
+        height: 40px;
+    }
 }
