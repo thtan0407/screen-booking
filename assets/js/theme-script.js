@@ -7,12 +7,9 @@ $(document).ready(function () {
         });
     }
 
-    // $('.profile-form input').focus(function () {
-    //     if($(this))
-    //     $(this).css('font-size', '16px');
-    // })
 
     if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+        // Anh thay selector nha
         $('.profile-form input').css('font-size', '16px');
     }
 });
